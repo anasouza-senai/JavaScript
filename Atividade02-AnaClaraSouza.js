@@ -16,6 +16,10 @@ var largura = 6;
 console.log(12 * 6);
 var area = 72;
 console.log("Sua área é", area, "cm");
+var altura = 5 
+var volume = altura * area
+console.log("O volume é " + volume + "cm")
+
 
 console.log("-------------------");
 
