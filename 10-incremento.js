@@ -22,4 +22,4 @@ console.log("idade:", idade, "| Nova Idade:", novaIdade);
 novaIdade+=10; //novaIdade = novaIdade + 10
 console.log(novaIdade);
 
-novaIdade -=
+novaIdade 
