@@ -14,12 +14,12 @@
 // console.log(`____|____|____`)
 // console.log(`    |    |    `)
 
-var tabuleiro = [
+const tabuleiro = [
     [" "," "," "]
     [" "," "," "]
     [" "," "," "]
 ];
-let jogadorX = "X"
+let jogadorAtual = "X"
 let jogadorO = "O"
 
 function jogar (jogador) {
@@ -32,7 +32,41 @@ do{
 
 
   tabuleiro[linha][coluna] = jogador;
+ jogadorAtual = jogadorAtual === "X" ? "O" : "X;"
  }
+
+ function verificaVencedor() {
+    for (let i = 0; i < 3; i++) {
+        //verifica coluna
+        if (tabuleiro[0][i] === tabuleiro[1][i] &&
+            tabuleiro[1][i] === tabuleiro[2][i] &&
+            tabuleiro[1][i] !== " "
+){
+    console.log(`O jogador ${tabuleiro[1][i]} ganhou`);
+    return tabuleiro[1][i]
+ } else if (
+        tabuleiro[i][0] === tabuleiro[i][1] &&
+        tabuleiro[i][1] === tabuleiro[i][2] &&
+        tabuleiro[i][1] !== " "
+ ){
+    console.log(`O jogador ${tabuleiro[i][1]} ganhou`);
+    return tabuleiro[i][1]
+   } else if  (
+    tabuleiro[0][0] === tabuleiro[1][1] &&
+    tabuleiro[1][1] === tabuleiro[2][2] &&
+    tabuleiro[1][1] !== " "
+   ) {
+    console.log(`O jogador ${tabuleiro[1][1]} ganhou`);
+    return tabuleiro[1][1]
+   } else if  (
+    tabuleiro[0][2] === tabuleiro[1][1] &&
+    tabuleiro[1][1] === tabuleiro[2][0] &&
+    tabuleiro[1][1] !== " "
+) {
+    
+}
+ }
+}
 
 jogar(jogadorO);
 jogar (jogadorX);
